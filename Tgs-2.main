@@ -1,0 +1,31 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+public class T2 {
+  public static void main(String[] args) throws IOException, IOException {
+  
+  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+  
+  System.out.print("Masukkan Nama : ");
+  String nama = br.readLine();
+  
+  System.out.print("Masukkan Umur : ");
+  String inputUmur = br.readLine();
+  int umur = Integer.parseInt(inputUmur);
+      
+   System.out.print("Masukan Nim : ");  
+      String nim = br.readLine();
+      
+   System.out.print("Masukan kelas : ");
+      String kelas = br.readLine();
+      
+   System.out.print("Masukkan Alamat : ");
+   String alamat = br.readLine();
+      
+   System.out.println("nama = "+nama);
+   System.out.println("umur = "+umur); 
+   System.out.println("Nim = "+nim); 
+   System.out.println("kelas = "+kelas); 
+   System.out.println("Alamat = "+alamat); 
+  }
+}
