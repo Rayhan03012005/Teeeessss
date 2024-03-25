@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class H99 {
+    public static void main(String[] args) {
+        
+        
+        double[][] koefisien = {{2, -3}, {3, 5}};
+        double[] konstanta = {7, 1};
+
+        double[][] matriks = {{2, -3}, {3, 5}};
+        double determinan = matriks[0][0] * matriks[1][1] - matriks[0][1] * matriks[1][0];
+
+        if (determinan != 0) {
+            double[][] matriksX = new double[koefisien.length][koefisien[0].length];
+            double[][] matriksY = new double[koefisien.length][koefisien[0].length];
+
+            for (int i = 0; i < koefisien.length; i++) {
+                System.arraycopy(koefisien[i], 0, matriksX[i], 0, koefisien[i].length);
+                System.arraycopy(koefisien[i], 0, matriksY[i], 0, koefisien[i].length);
+            }
+
+            for (int i = 0; i < konstanta.length; i++) {
+                matriksX[i][0] = konstanta[i];
+                matriksY[i][1] = konstanta[i];
+            }
+
+            double determinanX = matriksX[0][0] * matriksX[1][1] - matriksX[0][1] * matriksX[1][0];
+            double determinanY = matriksY[0][0] * matriksY[1][1] - matriksY[0][1] * matriksY[1][0];
+
+            double[] solusi = new double[2];
+            solusi[0] = determinanX / determinan;
+            solusi[1] = determinanY / determinan;
+
+            System.out.println("Solusi:");
+            System.out.println("x = " + solusi[0]);
+            System.out.println("y = " + solusi[1]);
+        } else {
+            System.out.println("Tidak ada solusi unik.");
+        }
+    }
+}
