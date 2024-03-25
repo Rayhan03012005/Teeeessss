@@ -1,0 +1,47 @@
+import java.util.Scanner;
+import java.util.Scanner;
+public class H99 {
+    public static void main(String[] args) {
+        
+        // Matriks A
+        int[][] A = {{1, 2},
+                     {4, -3}};
+
+        // Menghitung A^2
+        int[][] A_squared = matrixMultiply(A, A);
+        System.out.println("A^2 =");
+        printMatrix(A_squared);
+
+        // Menghitung A^3
+        int[][] A_cubed = matrixMultiply(A_squared, A);
+        System.out.println("A^3 =");
+        printMatrix(A_cubed);
+    }
+
+    // Fungsi untuk mengalikan dua matriks
+    public static int[][] matrixMultiply(int[][] A, int[][] B) {
+        int rowsA = A.length;
+        int colsA = A[0].length;
+        int colsB = B[0].length;
+        int[][] result = new int[rowsA][colsB];
+
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < colsB; j++) {
+                for (int k = 0; k < colsA; k++) {
+                    result[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+        return result;
+    }
+
+    // Fungsi untuk mencetak matriks
+    public static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
