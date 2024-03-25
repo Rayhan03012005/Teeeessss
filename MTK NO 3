@@ -1,0 +1,37 @@
+public class task3 {
+    public static void main(String[] args) {
+        int[][] matriksA = {
+            {1, 2, 3},
+            {4, 5, 6}
+        };
+        
+        int[][] matriksB = {
+            {7, 8},
+            {9, 10},
+            {11, 12}
+        };
+
+        int barisA = matriksA.length;
+        int kolomA = matriksA[0].length;
+        int kolomB = matriksB[0].length;
+
+        int[][] hasilMatriks = new int[barisA][kolomB];
+
+        for (int i = 0; i < barisA; i++) {
+            for (int j = 0; j < kolomB; j++) {
+                for (int k = 0; k < kolomA; k++) {
+                    hasilMatriks[i][j] += matriksA[i][k] * matriksB[k][j];
+                }
+            }
+        }
+
+        // Print hasil perkalian matriks
+        System.out.println("Hasil perkalian matriks:");
+        for (int[] hasil : hasilMatriks) {
+            for (int element : hasil) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+    }
+}
