@@ -1,0 +1,20 @@
+package probably;
+
+import java.util.Scanner;
+
+public class Task4 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Masukkan angka: ");
+        double angka = sc.nextDouble();
+        double ceiling = Math.ceil(angka);
+        double floor = Math.floor(angka);
+
+        System.out.println("Angka ceiling dari " + angka + " adalah: " + ceiling);
+        System.out.println("Angka floor dari " + angka + " adalah: " + floor);
+
+        sc.close();
+    }
+}
